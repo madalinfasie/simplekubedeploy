@@ -24,12 +24,7 @@ RUN apt-get update -y \
 COPY api ${CODE}
 WORKDIR ${CODE}
 
-# You can also install a virtual env and activate it here or install from requirements.txt
-
-RUN python3 -m venv env
-
-RUN . ${CODE}/env/bin/activate
-
+# Install the python packages
 RUN pip install flask gunicorn
 
 # Expose the port
